@@ -10,19 +10,6 @@ This project implements a **Disease Prediction Model** to predict the likelihood
 - **Streamlit App**: A user-friendly web interface to input symptoms and view results.
 - **Separate Training Scripts**: Individual scripts to train and save models for each disease as `.pkl` files.
 
-## Project Structure
-- **Folders**:
-  - `asthma/`: Contains the asthma dataset (`asthma.csv`).
-  - `cancer/`: Contains the cancer dataset (`cancer.csv`).
-  - `diabetes/`: Contains the diabetes dataset (`diabetes.csv`).
-  - `stroke/`: Contains the stroke dataset (`stroke.csv`).
-- **Files**:
-  - `app.py`: The Streamlit web application for predictions and explanations.
-  - `train_model.py`:It is used to train the models like astham,cancer,diabetes,stroke and obtain .pkl files and then mergerd all of them into `models` folder
-  - `asthma_model.pkl`, `cancer_model.pkl`, `diabetes_model.pkl`, `stroke_model.pkl`: Trained model files.
-  - `requirements.txt`: List of Python dependencies.
-  - `README.md`: Project documentation.
-
 ## Datasets
 The datasets were sourced from Kaggle and preprocessed for this project. Each dataset contains features specific to the disease and a binary target variable (0 or 1) indicating the presence of the disease. The features were one-hot encoded where necessary.
 
@@ -68,12 +55,9 @@ cd DiseasePredictionModel
 ### 2. Train the Models
 The project includes separate scripts to train each model. Run the following commands to train and save the models as `.pkl` files:
 ```bash
-python train_asthma_model.py
-python train_cancer_model.py
-python train_diabetes_model.py
-python train_stroke_model.py
+python train_model.py
 ```
-This will generate `asthma_model.pkl`, `cancer_model.pkl`, `diabetes_model.pkl`, and `stroke_model.pkl` in the root directory.
+This will generate `asthma_model.pkl`, `cancer_model.pkl`, `diabetes_model.pkl`, and `stroke_model.pkl` in the root directory,then add them into `models` folder.
 
 **Note**: Ensure the dataset files (`asthma.csv`, `cancer.csv`, `diabetes.csv`, `stroke.csv`) are in their respective folders and the target column names in the training scripts match your dataset. Update the scripts if necessary (e.g., specify the correct target column name).
 
@@ -105,22 +89,6 @@ For Diabetes:
     - "Top contributing factors: Glucose (Value: 148, Contribution: 0.72), BMI (Value: 33.6, Contribution: 0.45), Age (Value: 50, Contribution: 0.30)."
   - Visualization: Bar chart of feature importance.
 
-## Deployment on Streamlit Community Cloud
-To deploy the app on Streamlit Community Cloud:
-1. Ensure all files (including `.pkl` files) are pushed to your GitHub repository.
-2. Go to [Streamlit Community Cloud](https://streamlit.io/cloud) and sign in with your GitHub account.
-3. Click "New app" and select your repository (`DiseasePredictionModel`).
-4. Specify the main script (`app.py`) and click "Deploy".
-5. Once deployed, share the app URL with others.
-
-## Future Enhancements
-- **Improved Thresholds**: Replace placeholder typical thresholds (e.g., typical glucose=100) with actual clinical values or dataset averages.
-- **Enhanced Explanations**: Add more detailed comparisons, such as percentile rankings of user inputs relative to the dataset.
-- **Additional Visualizations**: Include more charts, such as waterfall plots for SHAP values or scatter plots of user inputs vs. population data.
-
 ## Acknowledgments
 - Datasets sourced from [Kaggle](https://www.kaggle.com).
 - Built with [Streamlit](https://streamlit.io), [XGBoost](https://xgboost.readthedocs.io), and [SHAP](https://shap.readthedocs.io).
-
-## Author
-- **Avinash** ([GitHub](https://github.com/Avinash00725))
