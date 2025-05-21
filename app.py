@@ -73,7 +73,7 @@ def get_ai_explanation(disease, model, explainer, input_data, feature_names):
 
     return risk_level, explanation
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="centered")
 st.title("Disease Prediction Model")
 st.write("Select a disease to predict and enter the symptoms to get a diagnosis, risk level, AI explanations, and a visualization of feature importance.")
 
