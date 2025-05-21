@@ -18,10 +18,7 @@ This project implements a **Disease Prediction Model** to predict the likelihood
   - `stroke/`: Contains the stroke dataset (`stroke.csv`).
 - **Files**:
   - `app.py`: The Streamlit web application for predictions and explanations.
-  - `train_asthma_model.py`: Script to train and save the Asthma model.
-  - `train_cancer_model.py`: Script to train and save the Cancer model.
-  - `train_diabetes_model.py`: Script to train and save the Diabetes model.
-  - `train_stroke_model.py`: Script to train and save the Stroke model.
+  - `train_model.py`:It is used to train the models like astham,cancer,diabetes,stroke and obtain .pkl files and then mergerd all of them into `models` folder
   - `asthma_model.pkl`, `cancer_model.pkl`, `diabetes_model.pkl`, `stroke_model.pkl`: Trained model files.
   - `requirements.txt`: List of Python dependencies.
   - `README.md`: Project documentation.
